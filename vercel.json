@@ -7,9 +7,21 @@
     }
   ],
   "routes": [
-    { "src": "/mobile", "dest": "app.py" },
-    { "src": "/api/chackout", "dest": "app.py" },
-    { "src": "/IMG/(.*)", "dest": "/IMG/$1" },
-    { "src": "/(.*)", "dest": "app.py" }
+    {
+      "src": "/mobile",
+      "dest": "app.py"
+    },
+    {
+      "src": "/api/chackout",
+      "dest": "app.py"
+    },
+    {
+      "src": "/IMG/(.*)",
+      "dest": "/IMG/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "app.py"
+    }
   ]
 }

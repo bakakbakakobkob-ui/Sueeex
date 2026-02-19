@@ -1,30 +1,26 @@
 {
-  "functions": {
-    "api/*.php": {
-      "runtime": "vercel-php@0.7.1"
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
     }
-  },
+  ],
   "routes": [
     {
-      "src": "/api/chackout",
-      "dest": "/api/chackout.php"
-    },
-    {
-      "src": "/api/success",
-      "dest": "/api/success.php"
-    },
-    {
       "src": "/mobile",
-      "dest": "/template/game/mobile.html"
+      "dest": "app.py"
     },
     {
-      "src": "/freefire",
-      "dest": "/template/game/freefire.html"
+      "src": "/api/chackout",
+      "dest": "app.py"
+    },
+    {
+      "src": "/IMG/(.*)",
+      "dest": "/IMG/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "app.py"
     }
   ]
 }
-

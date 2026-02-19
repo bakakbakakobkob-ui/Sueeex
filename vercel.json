@@ -6,8 +6,8 @@
   },
   "routes": [
     {
-      "src": "/api/checkout",
-      "dest": "/api/checkout.php"
+      "src": "/api/chackout",
+      "dest": "/api/chackout.php"
     },
     {
       "src": "/api/success",

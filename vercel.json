@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "functions": {
     "api/*.php": {
       "runtime": "vercel-php@0.7.1"
@@ -10,8 +11,16 @@
       "dest": "/api/chackout.php"
     },
     {
+      "src": "/success",
+      "dest": "/api/success.php"
+    },
+    {
       "src": "/mobile",
       "dest": "/template/game/mobile.html"
+    },
+    {
+      "src": "/IMG/(.*)",
+      "dest": "/IMG/$1"
     },
     {
       "src": "/(.*)",

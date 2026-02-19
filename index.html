@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C -POP TOPUP - រហ័ស & ទុកចិត្ត</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #63B7C4; /* ពណ៌បៃតងដូចក្នុងរូបភាពដើម */
+            --bg-color: #f0f7f4;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kantumruy Pro', 'Poppins', sans-serif; }
+
+        body { background-color: var(--bg-color); }
+
+        /* Navbar */
+        .nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 20px; background: var(--primary-green);
+            color: white; position: sticky; top: 0; z-index: 1000;
+        }
+        .logo-area { display: flex; align-items: center; gap: 10px; }
+        .logo-circle { width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; object-fit: cover; }
+        .logo-text b { display: block; font-size: 16px; line-height: 1.2; }
+        .logo-text span { font-size: 10px; opacity: 0.9; }
+
+        /* Banner Section - កែសម្រួលថ្មី */
+        .hero-section {
+            background: var(--primary-green);
+            padding: 15px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+        .banner-wrapper {
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            line-height: 0; /* ការពារកុំឱ្យមានចន្លោះក្រោមរូបភាព */
+        }
+        .banner-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Content Container */
+        .container { padding: 20px 15px; }
+        .section-title {
+            display: flex; align-items: center; gap: 8px;
+            margin-bottom: 20px; color: var(--primary-green);
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .game-card {
+            background: white; border-radius: 20px; padding: 10px;
+            text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+        }
+        .game-img {
+            width: 100%; aspect-ratio: 1/1; border-radius: 15px;
+            object-fit: cover; margin-bottom: 10px;
+        }
+        .game-card h3 { font-size: 13px; margin-bottom: 10px; color: #333; }
+
+        .btn-topup {
+            width: 100%; background: var(--primary-green); color: white;
+            border: none; padding: 10px; border-radius: 12px;
+            font-weight: 600; cursor: pointer; font-size: 12px;
+        }
+
+        /* Footer */
+        .footer { text-align: center; padding: 40px 20px; color: #999; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="logo-area">
+            <img src="/IMG/st.png" class="logo-circle" alt="Logo">
+            <div class="logo-text">
+                <b>C - POP TOPUP</b>
+                <span>គុណភាព · សុវត្ថិភាព</span>
+            </div>
+        </div>
+        <div style="font-size: 24px;"></div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="banner-wrapper">
+            <img src="/IMG/logoevt.jpeg" alt="Hero Banner">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section-title">
+            <span>🔥</span>
+            <h2 style="font-size: 18px;">ហ្គេមពេញនិយម</h2>
+        </div>
+
+<div class="game-grid">
+    <div class="game-card">
+        <img src="/IMG/ml.jpeg" class="game-img" alt="MLBB">
+        <h3>Mobile Legends</h3>
+        <button class="btn-topup" onclick="location.href='/template/game/mobile.php'">Topup Now</button>
+    </div>
+
+    <div class="game-card">
+        <img src="/IMG/ff.jpeg" class="game-img" alt="Free Fire">
+        <h3>Free Fire</h3>
+        <button class="btn-topup" onclick="location.href='freefire.html'">Topup Now</button>
+    </div>
+</div>
+
+    </div>
+
+    <footer class="footer">
+        <p>ដៃគូទូទាត់ប្រាក់: ABA | WING | KHQR</p>
+        <p style="margin-top: 10px;">© 2024 MRX TOPUP</p>
+    </footer>
+
+</body>
+</html>

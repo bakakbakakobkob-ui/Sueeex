@@ -1,27 +1,21 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "app.py",
-      "use": "@vercel/python"
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.1"
     }
-  ],
+  },
   "routes": [
     {
-      "src": "/mobile",
-      "dest": "app.py"
-    },
-    {
       "src": "/api/chackout",
-      "dest": "app.py"
+      "dest": "/api/chackout.php"
     },
     {
-      "src": "/IMG/(.*)",
-      "dest": "/IMG/$1"
+      "src": "/mobile",
+      "dest": "/template/game/mobile.html"
     },
     {
       "src": "/(.*)",
-      "dest": "app.py"
+      "dest": "/$1"
     }
   ]
 }

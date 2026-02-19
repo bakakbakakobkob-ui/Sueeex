@@ -35,7 +35,7 @@ def game_detail(game_name):
         return "រកមិនឃើញហ្គេមនេះទេ!", 404
     
     # បញ្ជូនទៅកាន់ file ក្នុង template/game/
-    return render_template(f'game/{game_name}.php', game=game)
+    return render_template(f'game/{game_name}.html', game=game)
 
 # 3. Route សម្រាប់ Checkout (ទទួលទិន្នន័យពី Form)
 @app.route('/api/checkout', methods=['POST'])

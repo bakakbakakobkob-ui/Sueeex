@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <form action="payments.php" method="POST">
+    <form action="checkout.php" method="POST">
         <input type="hidden" name="user_info" id="final_user">
         <input type="hidden" name="diamonds" id="final_diamonds">
         <input type="hidden" name="price" id="final_price">

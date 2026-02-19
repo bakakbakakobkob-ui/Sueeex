@@ -1,29 +1,12 @@
 {
   "functions": {
-    "api/*.php": {
-      "runtime": "vercel-php@0.7.1"
-    }
+    "api/*.php": { "runtime": "vercel-php@0.7.1" },
+    "template/game/*.php": { "runtime": "vercel-php@0.7.1" }
   },
   "routes": [
-    {
-      "src": "/api/chackout",
-      "dest": "/api/chackout.php"
-    },
-    {
-      "src": "/api/success",
-      "dest": "/api/success.php"
-    },
-    {
-      "src": "/topup/mobile",
-      "dest": "/template/game/mobile.php"
-    },
-    {
-      "src": "/topup/freefire",
-      "dest": "/template/game/freefire.php"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
+    { "src": "/api/chackout", "dest": "/api/chackout.php" },
+    { "src": "/api/success", "dest": "/api/success.php" },
+    { "src": "/game/mobile", "dest": "/template/game/mobile.php" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }

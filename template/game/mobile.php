@@ -1,5 +1,5 @@
 <?php
-// កំណត់តម្លៃក្នុង PHP Array ដើម្បីងាយស្រួលកែប្រែថ្ងៃក្រោយ
+// កំណត់តម្លៃពេជ្រ (អាចកែប្រែបាននៅទីនេះ)
 $packages = [
     ["amount" => "86 Diamonds", "price" => 0.01],
     ["amount" => "706 Diamonds", "price" => 12.50],
@@ -30,15 +30,13 @@ $packages = [
             background: var(--primary-dark);
             padding: 12px 15px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 12px;
             color: white;
             cursor: pointer;
         }
-        .profile-info { display: flex; align-items: center; gap: 10px; }
         .profile-img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid white; object-fit: cover; }
         .brand-text b { display: block; font-size: 16px; }
-        .brand-text span { font-size: 11px; opacity: 0.8; }
 
         .container { padding: 15px; max-width: 500px; margin: auto; }
 
@@ -47,105 +45,84 @@ $packages = [
 
         .game-info-card { background: white; border-radius: 20px; padding: 15px; display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
         .game-icon { width: 65px; height: 65px; border-radius: 15px; object-fit: cover; }
-        .instant-badge { font-size: 12px; color: var(--success); display: flex; align-items: center; gap: 4px; font-weight: bold; margin-top: 4px; }
+        .instant-badge { font-size: 12px; color: var(--success); font-weight: bold; margin-top: 4px; }
 
-        .step-card { background: var(--primary-dark); border-radius: 25px; padding: 25px 20px; color: white; margin-bottom: 20px; }
-        .step-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+        .step-card { background: var(--primary-dark); border-radius: 25px; padding: 20px; color: white; margin-bottom: 20px; }
+        .step-header { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
         .step-num { 
             background: white; color: var(--primary-dark); 
-            width: 32px; height: 32px; border-radius: 50%; 
+            width: 28px; height: 28px; border-radius: 50%; 
             display: flex; align-items: center; justify-content: center; 
             font-weight: 800; font-family: 'Poppins';
         }
 
-        .input-row { display: flex; gap: 12px; margin-bottom: 15px; }
-        .input-field { background: white; border-radius: 15px; display: flex; align-items: center; padding: 14px 15px; gap: 8px; flex: 1; }
-        .input-field span { color: #ccc; font-weight: bold; font-size: 18px; }
-        .input-field input { border: none; outline: none; width: 100%; font-size: 18px; font-weight: bold; color: #333; }
+        .input-row { display: flex; gap: 10px; margin-bottom: 12px; }
+        .input-field { background: white; border-radius: 12px; display: flex; align-items: center; padding: 12px; gap: 8px; flex: 1; }
+        .input-field input { border: none; outline: none; width: 100%; font-size: 16px; font-weight: bold; color: #333; }
+        
         .btn-check-id { 
-            width: 100%; background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.4); 
-            border-radius: 15px; padding: 14px; color: white; font-weight: bold; cursor: pointer; transition: 0.3s;
+            width: 100%; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); 
+            border-radius: 12px; padding: 12px; color: white; font-weight: bold; cursor: pointer;
         }
 
-        .diamond-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-        .diamond-item { background: white; border-radius: 20px; padding: 15px; text-align: center; cursor: pointer; position: relative; border: 3px solid transparent; transition: 0.2s; }
+        .diamond-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .diamond-item { background: white; border-radius: 18px; padding: 15px; text-align: center; cursor: pointer; position: relative; border: 3px solid transparent; transition: 0.2s; }
         .diamond-item b { display: block; color: #333; font-size: 14px; margin-bottom: 4px; }
         .diamond-item span { color: var(--primary-dark); font-weight: 800; font-family: 'Poppins'; }
         .diamond-item.active { border-color: var(--success); background: #f0fff4; }
-        .check-mark { 
-            position: absolute; bottom: 8px; right: 8px; background: var(--success); color: white; 
-            width: 20px; height: 20px; border-radius: 50%; display: none; align-items: center; justify-content: center; font-size: 10px; 
-        }
+        .check-mark { position: absolute; bottom: 8px; right: 8px; background: var(--success); color: white; width: 18px; height: 18px; border-radius: 50%; display: none; align-items: center; justify-content: center; font-size: 10px; }
         .diamond-item.active .check-mark { display: flex; }
 
-        .payment-box { background: white; border-radius: 18px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 3px solid transparent; }
+        .payment-box { background: white; border-radius: 15px; padding: 12px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 3px solid transparent; }
         .payment-box.active { border-color: var(--success); }
-        .check-circle { background: #cbd5e1; color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+        .check-circle { background: #cbd5e1; color: white; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; }
         .payment-box.active .check-circle { background: var(--success); }
-
-        .terms-wrapper { margin-top: 15px; display: flex; gap: 8px; font-size: 12px; align-items: flex-start; }
-        .terms-wrapper input { accent-color: var(--success); margin-top: 3px; }
 
         .bottom-bar { 
             position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; 
             padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; 
-            border-radius: 25px 25px 0 0; box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+            border-radius: 20px 20px 0 0; box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
         }
-        .price-label { color: #94a3b8; font-size: 11px; }
-        .price-value { color: var(--primary-light); font-family: 'Poppins'; font-size: 24px; font-weight: 800; }
+        .price-value { color: var(--primary-light); font-family: 'Poppins'; font-size: 22px; font-weight: 800; }
         .btn-pay { 
-            background: #475569; color: #94a3b8; padding: 12px 25px; border-radius: 25px; 
-            border: none; font-weight: bold; cursor: not-allowed; transition: 0.3s;
+            background: #475569; color: #94a3b8; padding: 12px 25px; border-radius: 20px; 
+            border: none; font-weight: bold; cursor: not-allowed;
         }
-        .btn-pay.ready { background: var(--success); color: white; cursor: pointer; box-shadow: 0 4px 12px rgba(110, 188, 81, 0.3); }
+        .btn-pay.ready { background: var(--success); color: white; cursor: pointer; }
 
-        #resName { margin-top: 12px; text-align: center; font-weight: bold; display: none; font-size: 14px; background: rgba(255,255,255,0.1); padding: 8px; border-radius: 10px; }
+        #resName { margin-top: 10px; text-align: center; font-weight: bold; display: none; font-size: 13px; color: white; background: rgba(0,0,0,0.2); padding: 8px; border-radius: 8px; }
     </style>
 </head>
 <body>
 
     <header onclick="window.location.href='/'">
-        <div class="profile-info">
-            <img src="../../IMG/IMG_0259.jpeg" class="profile-img">
-            <div class="brand-text">
-                <b>M·RX TOPUP</b>
-                <span>គុណភាព • សុវត្ថិភាព</span>
-            </div>
-        </div>
+        <img src="../../IMG/IMG_0259.jpeg" class="profile-img">
+        <div class="brand-text"><b>M·RX TOPUP</b></div>
     </header>
 
     <div class="container">
-        <div class="banner-card">
-            <img src="../../IMG/IMG_0357.jpeg" alt="Banner">
-        </div>
+        <div class="banner-card"><img src="../../IMG/IMG_0357.jpeg"></div>
 
         <div class="game-info-card">
             <img src="../../IMG/IMG_0359.jpg" class="game-icon">
             <div>
-                <h3 style="color:var(--primary-dark); font-size: 17px;">MOBILE LEGENDS | ខ្មែរ</h3>
-                <p style="font-size: 12px; color: #64748b;">Moonton</p>
+                <h3 style="color:var(--primary-dark); font-size: 16px;">MOBILE LEGENDS | ខ្មែរ</h3>
                 <div class="instant-badge">✔ Instant Delivery</div>
             </div>
         </div>
 
         <div class="step-card">
-            <div class="step-header">
-                <div class="step-num">1</div>
-                <b>បញ្ចូលព័ត៌មានគណនី</b>
-            </div>
+            <div class="step-header"><div class="step-num">1</div><b>បញ្ចូលព័ត៌មានគណនី</b></div>
             <div class="input-row">
-                <div class="input-field"><span>#</span><input type="number" id="uId" placeholder="User ID"></div>
-                <div class="input-field" style="flex:0.7;"><span>()</span><input type="number" id="zId" placeholder="Zone"></div>
+                <div class="input-field"><input type="number" id="uId" placeholder="User ID"></div>
+                <div class="input-field" style="flex:0.7;"><input type="number" id="zId" placeholder="Zone"></div>
             </div>
-            <button class="btn-check-id" onclick="checkID()">ត្រួតពិនិត្យគណនី</button>
+            <button class="btn-check-id" onclick="checkID()">ឆែកឈ្មោះគណនី</button>
             <div id="resName"></div>
         </div>
 
         <div class="step-card">
-            <div class="step-header">
-                <div class="step-num">2</div>
-                <b>ជ្រើសរើសកញ្ចប់ពេជ្រ</b>
-            </div>
+            <div class="step-header"><div class="step-num">2</div><b>ជ្រើសរើសកញ្ចប់ពេជ្រ</b></div>
             <div class="diamond-grid">
                 <?php foreach($packages as $pkg): ?>
                 <div class="diamond-item" data-price="<?= $pkg['price'] ?>" data-name="<?= $pkg['amount'] ?>">
@@ -158,25 +135,18 @@ $packages = [
         </div>
 
         <div class="step-card">
-            <div class="step-header">
-                <div class="step-num">3</div>
-                <b>វិធីបង់ប្រាក់</b>
-            </div>
+            <div class="step-header"><div class="step-num">3</div><b>វិធីបង់ប្រាក់</b></div>
             <div class="payment-box" id="abaBox" onclick="selectPay()">
                 <div style="display:flex; align-items:center; gap:10px;">
                     <img src="../../IMG/IMG_0434.jpeg" width="30">
-                    <b style="color:#333; font-size:14px;">KHQR / ABA Pay</b>
+                    <b style="color:#333; font-size:14px;">ABA Pay / KHQR</b>
                 </div>
                 <div class="check-circle">✔</div>
-            </div>
-            <div class="terms-wrapper">
-                <input type="checkbox" id="terms" checked onchange="updateBtn()">
-                <label style="cursor: pointer;">ខ្ញុំយល់ព្រមលើលក្ខខណ្ឌប្រតិបត្តិ</label>
             </div>
         </div>
     </div>
 
-    <form id="topupForm" action="../../api/chackout.php" method="POST" style="display:none;">
+    <form id="topupForm" action="/api/chackout" method="POST" style="display:none;">
         <input type="hidden" name="user_id" id="hidden_uId">
         <input type="hidden" name="server_id" id="hidden_zId">
         <input type="hidden" name="diamonds" id="hidden_pkg">
@@ -184,10 +154,7 @@ $packages = [
     </form>
 
     <div class="bottom-bar">
-        <div>
-            <p class="price-label">តម្លៃសរុប</p>
-            <h2 id="totalPrice" class="price-value">$0.00</h2>
-        </div>
+        <div><p style="color:#94a3b8; font-size:10px;">តម្លៃសរុប</p><h2 id="totalPrice" class="price-value">$0.00</h2></div>
         <button class="btn-pay" id="payBtn" disabled onclick="processPay()">បង់ប្រាក់ឥឡូវនេះ</button>
     </div>
 
@@ -197,17 +164,14 @@ $packages = [
         async function checkID() {
             const u = document.getElementById('uId').value, z = document.getElementById('zId').value;
             const out = document.getElementById('resName');
-            if(!u || !z) return;
+            if(!u || !z) return alert("សូមបញ្ចូល ID និង Zone");
             out.style.display = "block"; out.innerText = "កំពុងឆែក...";
             try {
                 const res = await fetch(`https://api.isan.eu.org/nickname/ml?id=${u}&zone=${z}`);
                 const data = await res.json();
-                if(data.name) {
-                    out.innerText = "✅ ឈ្មោះគណនី: " + data.name; verified = true;
-                } else {
-                    out.innerText = "❌ រកមិនឃើញ ID"; verified = false;
-                }
-            } catch { out.innerText = "⚠️ Error API"; verified = false; }
+                if(data.name) { out.innerText = "✅ ឈ្មោះ: " + data.name; verified = true; } 
+                else { out.innerText = "❌ រកមិនឃើញ ID ទេ"; verified = false; }
+            } catch { out.innerText = "⚠️ API Error"; verified = false; }
             updateBtn();
         }
 
@@ -230,8 +194,7 @@ $packages = [
 
         function updateBtn() {
             const btn = document.getElementById('payBtn');
-            const terms = document.getElementById('terms').checked;
-            if(verified && selectedPrice > 0 && paySelected && terms) {
+            if(verified && selectedPrice > 0 && paySelected) {
                 btn.disabled = false; btn.classList.add('ready');
             } else {
                 btn.disabled = true; btn.classList.remove('ready');

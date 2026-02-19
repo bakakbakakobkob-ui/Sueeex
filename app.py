@@ -9,7 +9,7 @@ games_config = {
     "mobile": {
         "name": "Mobile Legends",
         "packages": [
-            {"name": "86 Diamonds", "price": 1.55},
+            {"name": "86 Diamonds", "price": 0.01},
             {"name": "706 Diamonds", "price": 12.50}
         ]
     },
@@ -35,7 +35,7 @@ def game_detail(game_name):
         return "រកមិនឃើញហ្គេមនេះទេ!", 404
     
     # បញ្ជូនទៅកាន់ file ក្នុង template/game/
-    return render_template(f'game/{game_name}.html', game=game)
+    return render_template(f'game/{game_name}.php', game=game)
 
 # 3. Route សម្រាប់ Checkout (ទទួលទិន្នន័យពី Form)
 @app.route('/api/checkout', methods=['POST'])
@@ -54,7 +54,7 @@ def checkout():
 # 4. Route សម្រាប់ Success Page
 @app.route('/api/success')
 def success():
-    return render_template('api/success.html')
+    return render_template('api/success.php')
 
 if __name__ == '__main__':
     app.run(debug=True)
